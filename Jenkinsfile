@@ -6,7 +6,7 @@ node {
         checkout scm
     }
 
-    stage('Update GIT') {
+    stage('Fetching latest build') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([gitUsernamePassword(credentialsId: '2e870c5a-54bb-4f34-94a1-586d17a32b58', gitToolName: 'LocalGIT')]) {
